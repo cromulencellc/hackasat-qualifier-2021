@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  fprime_space:
+    image: fprime-exploitation:challenge-space
+    environment: 
+      FLAG: "${FLAG}"
+    networks: 
+      fprime_net:
+        ipv4_address: 172.16.238.2
+    # ports:
+    #   - "50000:50000"
+  fprime_ground:
+    image: fprime-exploitation:challenge-ground
+    ports:
+      - "50050:50050"
+      - "80:5000"
+    networks: 
+      fprime_net:
+        ipv4_address: 172.16.238.3
+networks:
+  fprime_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.238.0/24"
+  

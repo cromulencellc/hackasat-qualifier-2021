@@ -1,0 +1,28 @@
+stages:
+  - docker
+
+build-challenge:
+  stage: docker
+  image:
+    name: $CI_REGISTRY/general/docker-images/docker-builder:latest
+  variables:
+    NO_CACHE:   "true"
+    WORKDIR:    generator
+    NAME:       noise
+    DOCKERFILE: Dockerfile
+    TAGS:       generator
+  script:
+    - /build.sh
+
+build-solver:
+  stage: docker
+  image:
+    name: $CI_REGISTRY/general/docker-images/docker-builder:latest
+  variables:
+    NO_CACHE:   "true"
+    WORKDIR:    solver
+    NAME:       noise
+    DOCKERFILE: Dockerfile
+    TAGS:       solver
+  script:
+    - /build.sh

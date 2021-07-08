@@ -1,0 +1,165 @@
+
+/* @const MARS_RED: #CE5F33;
+@const MARS_BROWN: #64260E;
+@const MARS_LIGHT_BROWN: #976651;
+@const MARS_DARK_GREY: #5A423E;
+@const MARS_LIGHT_GREY: #AEB5BC; */
+
+* {
+    box-sizing: border-box;
+    }
+
+    .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+
+    [class*="col-"] {
+    float: left;
+    padding: 15px;
+    background: rgb(237, 237, 236);
+    border-radius: 20px;
+    margin: 15px;
+
+    }
+
+    .col-1 {}
+    .col-2 {}
+
+    [class*="indicator-off"] {
+
+        padding: 5px;
+        /* border-style: solid; */
+        background: gray;
+        color: white;
+        text-align: center;
+        outline-style: solid;
+        outline-color: white;
+        outline-width: 1px;
+        font-weight: bold;
+
+    }
+
+    [class*="indicator-on"] {
+
+        padding: 5px;
+        /* border-style: solid; */
+        background: green;
+        color: white;
+        text-align: center;
+        outline-style: solid;
+        outline-color: white;
+        outline-width: 1px;
+        font-weight: bold;
+    }
+
+    [class*="indicator-error"] {
+
+        padding: 5px;
+        /* border-style: solid; */
+        background: red;
+        color: white;
+        text-align: center;
+        outline-style: solid;
+        outline-color: white;
+        outline-width: 1px;
+        font-weight: bold;
+
+    }
+
+    #chat { width: 97%; }
+    .message { font-weight: bold; }
+    .message:before { content: ' '; color: #bbb; font-size: 14px; }
+         
+    /* #log {
+       overflow: auto;
+       max-height: 300px;
+       list-style: none;
+       padding: 0;
+    }
+         
+    #log li {
+       /* border-top: 1px solid #ccc; */
+       margin: 0;
+       padding: 5px 0;
+       font: normal 8px/12px "Helvetica", Helvetica, sans-serif;
+    } */
+         
+    body {
+       font: normal 16px/20px "Helvetica Neue", Helvetica, sans-serif;
+       /* background: #9C2E35; */
+       /* background: #6E161C; */
+       background: @MARS_RED;
+       margin: 0;
+       margin-top: 40px;
+       padding: 0;
+    }
+         
+    button { width: 120px; margin-left: 20px;}
+
+    section, header {
+       display: block;
+    }
+         
+    #wrapper {
+       width: 600px;
+       margin: 0 auto;
+       background: #fff;
+       border-radius: 10px;
+       border-top: 1px solid #fff;
+       padding-bottom: 16px;
+    }
+         
+    h1 {
+       padding-top: 10px;
+    }
+         
+    h2 {
+       font-size: 100%;
+       font-style: italic;
+    }
+         
+    header, article > * {
+       margin: 20px;
+    }
+         
+    #status {
+       padding: 5px;
+       color: #fff;
+       background: #ccc;
+    }
+         
+    #status.fail {
+       background: #c00;
+    }
+         
+    #status.success {
+       background: #0c0;
+    }
+         
+    #status.offline {
+       background: #c00;
+    }
+         
+    #status.online {
+       background: #0c0;
+    }
+         
+    #html5badge {
+       margin-left: -30px;
+       border: 0;
+    }
+         
+    #html5badge img {
+       border: 0;
+    }
+
+    /* #altitude {
+
+        border: 1px solid blue;
+    }
+    #velocity {
+
+        border: 1px solid blue;
+    } */

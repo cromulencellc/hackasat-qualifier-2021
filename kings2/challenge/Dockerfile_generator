@@ -1,0 +1,23 @@
+FROM ubuntu:20.04 AS builder
+
+WORKDIR /build
+RUN apt update -y && \
+    apt install -y gcc build-essential make python3
+RUN apt install -y python3-pip && \
+    pip3 install pwntools
+
+COPY Makefile /build/
+COPY src /build/src
+COPY include /build/include
+ENV PWNLIB_NOTERM=true
+RUN make
+
+FROM ubuntu:20.04
+WORKDIR /gen
+COPY --from=generator-base /upload/ /upload
+COPY --from=builder /build/challenge /gen
+COPY --from=builder /lib/x86_64-linux-gnu/libc-2.31.so /gen/libc.so
+COPY generator.sh /gen
+RUN chmod +x /gen/generator.sh 
+
+CMD ["/bin/bash", "-c", "./generator.sh | /upload/upload.sh"]

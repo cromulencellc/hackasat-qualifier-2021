@@ -1,0 +1,7 @@
+*.out
+*.o
+*.vscode
+*__pycache__*
+*.swp
+challenge/challenge
+log

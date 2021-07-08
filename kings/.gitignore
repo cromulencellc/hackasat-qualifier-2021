@@ -1,0 +1,9 @@
+challenge/obj/*
+solver/obj/*
+*.bin
+*.gdb
+*.so
+venv
+challenge/runner
+challenge/challenge
+out/*

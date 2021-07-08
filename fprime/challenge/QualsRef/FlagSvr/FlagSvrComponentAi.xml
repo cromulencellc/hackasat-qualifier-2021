@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../Autocoders/Python/schema/ISF/component_schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<component name="FlagSvr" kind="passive" namespace="Ref">
+    <import_port_type>Svc/Sched/SchedPortAi.xml</import_port_type>
+    <comment>A rate group active component with input flag ready port to enable flag in tlm</comment>
+    <commands>
+        <command kind="sync" opcode="0" mnemonic="FS_FlagEnable">
+            <comment>
+            Command to enable flag
+            </comment>
+            <args>
+                <arg name="passcode" type="string" size="128">
+                    <comment>
+                    Passcode required to enable flag. Retrieved via dissambly
+                    </comment>
+                </arg>
+            </args>
+        </command>
+        <command kind="sync" opcode="1" mnemonic="FS_FlagSvrNoop">
+            <comment>
+            FlagSvr NOOP Command
+            </comment>
+        </command>
+    </commands>
+    <telemetry>
+        <channel id="0" name="FS_NOOP_CNT" data_type="U32">
+            <comment>
+            FlagSvr Noop Counter
+            </comment>
+        </channel>
+        <channel id="1" name="FS_THE_FLAG_PART_0" data_type="string" size="40">
+            <comment>
+            Flag Data 0
+            </comment>
+        </channel>
+        <channel id="2" name="FS_THE_FLAG_PART_1" data_type="string" size="40">
+            <comment>
+            Flag Data 1
+            </comment>
+        </channel>
+        <channel id="3" name="FS_THE_FLAG_PART_2" data_type="string" size="40">
+            <comment>
+            Flag Data 2
+            </comment>
+        </channel>
+        <channel id="4" name="FS_THE_FLAG_PART_3" data_type="string" size="40">
+            <comment>
+            Flag Data 3
+            </comment>
+        </channel>
+    </telemetry>
+    <events>
+        <event id="0" name="FS_FLAG_DATA_ATTEMPT" severity="ACTIVITY_HI" format_string="FlagSrv recieved flag data attempt with code %s" >
+            <args>
+                <arg name="cnt" type="string" size="128">
+                    <comment>Flag code</comment>
+                </arg>
+            </args>
+            <comment>
+            Flag data attempt received
+            </comment>
+        </event>
+        <event id="1" name="FS_FLAG_RETRIEVED_SUCCESS" severity="ACTIVITY_HI" format_string="FlagSrv recieved successful flag code. Send Flag in TLM Now" >
+            <comment>
+            Flag retrieval successful. Downlink now
+            </comment>
+        </event>
+     </events>
+</component>
+

@@ -1,0 +1,8 @@
+certifi==2021.5.30
+construct==2.10.67
+jplephem==2.15
+numpy==1.20.3
+scipy==1.7.0
+sgp4==2.19
+skyfield==1.39
+aioconsole==0.3.1

@@ -1,0 +1,31 @@
+stages:
+  - docker
+
+variables:
+  CHALLENGE_NAME: bitflipper
+
+build-challenge:
+  stage: docker
+  image:
+    name: $CI_REGISTRY/general/docker-images/docker-builder:latest
+  variables:
+    NO_CACHE:   "true"
+    WORKDIR:    challenge
+    NAME:       $CHALLENGE_NAME
+    DOCKERFILE: Dockerfile
+    TAGS:       challenge
+  script:
+    - /build.sh
+
+build-solver:
+  stage: docker
+  image:
+    name: $CI_REGISTRY/general/docker-images/docker-builder:latest
+  variables:
+    NO_CACHE:   "true"
+    WORKDIR:    solver
+    NAME:       $CHALLENGE_NAME
+    DOCKERFILE: Dockerfile
+    TAGS:       solver
+  script:
+    - /build.sh

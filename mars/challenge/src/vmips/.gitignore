@@ -1,0 +1,6 @@
+*.o
+vmipstool
+vmips
+libopcodes_mips
+test_code
+doc

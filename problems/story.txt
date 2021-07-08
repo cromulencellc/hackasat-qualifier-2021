@@ -1,0 +1,21 @@
+Problems are mounting - A cubesat has 6 solar sensors, one on each side of the satellite.
+At any given time, the sun can be observed by a maximum of 3 sensors at a time. The combination 
+of measurements from 3 sensors provides the Sun vector in the spacecraft coordinate system. 
+The spacecraft coordinate system is a cartesian system with the origin at the center of the
+satellite. The sun vector, in combination with other observations such as the Earth magnetic field
+vector can be used to determine the full 3D 
+attitude of the spacecraft.
+
+During launch, the mounting angle of one of the sun sensors shifted and is no longer aligned 
+with the spacecraft coordinate system's axis causing the sun vector determination to be wrong.
+Determine which of the 6 sensors was shifted and find it's vector norm by measuring the induced voltages of the 6 sensors at several differnent orientations. 
+
+Flag - correct vector norm of the shifted solar sensor
+
+Given information:
+6 solar sensors on a cubesat, one on each face. In spaceecraft coodinates the vector norms should be (1,0,0), (0,1,0), (0,0,1), (-1,0,0), (0,-1,0), (0,0,-1).
+
+One of the sensors shifted and is no longer aligned with the axis of the satellite.
+
+Assume the satellite is always 1 A.U. (Astronomical Unit distance from the sun).
+Each solar sensor has a 1 square cm area and a 10% efficiency. A 10 ohm resistor is used as a voltmeter.

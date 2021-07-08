@@ -1,0 +1,1 @@
+set exec-wrapper env 'LD_LIBRARY_PATH=/home/john/Downloads/libcdown/libc6_2.27/lib/x86_64-linux-gnu/'

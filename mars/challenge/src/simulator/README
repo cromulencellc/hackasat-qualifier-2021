@@ -1,0 +1,39 @@
+
+Inputs to controller
+
+    velocity
+    acceleration
+
+    radar_acquired
+        altitude - this value is unreliable if radar_acquired isn't active
+
+    leg1_touchdown
+    leg2_touchdown
+    leg3_touchdown
+
+    landing_enable - leg sensors ignored until this is active.  Enabled after radar turned off
+    
+Outputs
+
+    parachute_deploy
+    backshell_eject
+    deploy_legs
+    thrust%
+    engine_cutoff
+    constant_velocity_phase
+
+
+Spacecraft_state
+
+    parachute_deployed - this is a starting condition?
+    backshell_ejected (parachute attached) - this has to happen by a certain time of its a failure
+        coefficient of friction changes
+    legs_deployed - this should take a few seconds once commanded
+    powered_descent started
+    constant velocity phase 
+    
+
+Needed features
+    detect if the engine has not been shutoff within 40 ms of touchdown.  Set error if not.
+    
+

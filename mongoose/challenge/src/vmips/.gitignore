@@ -1,0 +1,10 @@
+*.o
+vmipstool
+vmips
+test_code
+doc
+Makefile
+config.status
+config.log
+autom4te.cache
+Logging.txt

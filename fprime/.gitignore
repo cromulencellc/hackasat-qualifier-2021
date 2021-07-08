@@ -1,0 +1,6 @@
+**/fprime-venv/
+**/fprime/
+**/QualsRef/build-
+**/QualsRef/logs
+/fprime-re*
+log2

@@ -1,0 +1,1 @@
+LCM_MIN_PORT=16000 LCM_MAX_PORT=17000 LCM_INNER_PORT_BASE=54321 LCM_PORT_KINDS=udp /home/ubuntu/lcm/target/release/lifecycle_manager __TT_ENV__

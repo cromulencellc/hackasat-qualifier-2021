@@ -1,0 +1,58 @@
+<html>
+<head>
+    <script src="charts.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>   
+</head>
+<body>
+
+<iframe id="hidden_frame" style="display:none;"></iframe>
+
+<div id="log1">
+	<form id="log-form" method="post">
+        <input type="button" id="start-btn" value="Start" onclick="resetSim();"/>
+        <input type="button" id="stop-btn" value="Stop" onclick="stopSim();"/>
+        <input type="button" id="download-btn" value="Get ROM" onclick="Download();"/>
+        <input type="file" id="file-selector">
+		<input type="button" id="upload-btn" value="Upload ROM" onclick="sendFile();"/>
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-0">
+        <div id="parachute" class="indicator-off">Parachute Deployed</div>
+        <div id="backshell" class="indicator-off">Backshell Ejected</div>
+        <div id="powered_descent" class="indicator-off">Powered Descent</div>
+        <div id="legs_deployed" class="indicator-off">Legs Deployed</div>
+        <div id="constant_velocity" class="indicator-off">Constant Velocity</div>
+        <div id="touchdown" class="indicator-off">Touchdown</div>
+        <div id="engine_cutoff" class="indicator-off">Engine Cutoff</div>
+    </div>
+    <div class="col-1">
+        <canvas id="fuel" width="100" height = "200"></canvas>
+    </div>
+    <div class="col-2">
+        <canvas id="thrust" width="100" height = "200"></canvas>
+    </div>
+    <div class="col-3">
+        <canvas id="velocitybar" width="100" height = "200"></canvas>
+    </div>
+    <div class="col-4">
+        <canvas id="altitudebar" width="100" height = "200"></canvas>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-1">
+        <canvas id="velocity" width="500" height="500"></canvas>
+    </div>
+    <div class="col-2">
+        <canvas id="altitude" width="500" height="500"></canvas>
+    </div>
+</div>
+
+<script src="ui.js"></script>
+
+</body>
+</html>
+
